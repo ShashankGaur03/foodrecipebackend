@@ -18,10 +18,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(cors());
 app.use(cors({
-    origin: '*', // Allows all domains
+    origin: '*',
     methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true // If using cookies or authentication
+    allowedHeaders: 'Content-Type,Authorization'
 }));
 app.use(helmet());
 
