@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = ["https://recipesnest.netlify.app"];
 app.use(cors({
-    origin: function (origin, callback) {
+    origin: function (link, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
+            callback(null, link);
         } else {
             callback(new Error("Not allowed by CORS"));
         }
