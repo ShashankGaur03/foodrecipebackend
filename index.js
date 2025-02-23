@@ -16,7 +16,13 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: '*', // Allows all domains
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+    credentials: true // If using cookies or authentication
+}));
 app.use(helmet());
 
 app.use(
